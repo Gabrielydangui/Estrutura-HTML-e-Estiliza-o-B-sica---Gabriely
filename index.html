@@ -3,32 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Login</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sistema de Login</title>
+
+    <!-- Importando os arquivos de estilo -->
+    <link rel="stylesheet" href="style-global.css">
+    <link rel="stylesheet" href="style-login.css">
+    <link rel="stylesheet" href="style-reset.css">
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-form">
-            <h2>Login</h2>
-            <form id="loginForm">
-                <div class="input-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Entrar</button>
-                    <button type="reset" class="btn btn-secondary">Limpar</button>
-                </div>
-                <div class="forgot-password">
-                    <a href="reset-password.html">Esqueci minha senha</a>
-                </div>
-            </form>
+    <div class="container">
+        <div class="card" id="loginCard">
+            <div class="card-header">
+                <h2>Login</h2>
+            </div>
+
+            <div class="card-body">
+                <form id="loginForm">
+                    <div id="loginMessage" class="message"></div>
+
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required placeholder="seu@gmail.com">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" required placeholder="Sua senha">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <button type="reset" class="btn btn-secondary">Limpar</button>
+                    </div>
+
+                    <div class="forgot-password">
+                        <a href="#" id="forgotPasswordLink">Esqueci minha senha</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- FORMULÁRIO DE RECUPERAÇÃO -->
+        <div class="card" id="resetCard" style="display:none;">
+            <div class="card-header">
+                <h2>Redefinir Senha</h2>
+            </div>
+
+            <div class="card-body">
+                <form id="resetForm">
+                    <div id="resetMessage" class="message"></div>
+
+                    <div class="input-group">
+                        <label for="resetEmail">E-mail</label>
+                        <input type="email" id="resetEmail" name="resetEmail" required placeholder="seu@gmail.com">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Enviar link</button>
+                        <button type="button" class="btn btn-secondary" id="backToLogin">Voltar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
+
